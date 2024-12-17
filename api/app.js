@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 // Environment variables
-const CONTROL_ROOM_API = process.env.CONTROL_ROOM_API;
+const CONTROL_ROOM_API = "hola url";
 
 app.get("/", (req, res) => {
   res.send({
