@@ -12,6 +12,7 @@ const corOptions = {
   origin: [process.env.DEV_ALLOWED, process.env.PROD_ALLOWED],
   methods: ["GET", "POST"],
   allowedHeaders: "*",
+  preflightContinue: false,
 };
 
 // Middleware
@@ -52,4 +53,7 @@ app.use("/api", async (req, res) => {
       .send(error.response?.data || "An error occurred");
   }
 });
+
+app.options("*", cors(corOptions));
+
 export default app;
