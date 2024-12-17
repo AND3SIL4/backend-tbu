@@ -4,5 +4,5 @@ import app from "./api/app.js";
 const PORT = 5000;
 
 app.listen(PORT, () => {
-  console.log(`Proxy server is running on port ${PORT}`);
+  console.log(`Proxy server is running on localhost:${PORT}`);
 });
