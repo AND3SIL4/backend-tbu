@@ -17,6 +17,7 @@ app.get("/", (req, res) => {
     message: "API proxy is running...",
     status: "success",
     timestamp: new Date(),
+    url: CONTROL_ROOM_API,
   });
 });
 
