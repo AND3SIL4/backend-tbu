@@ -27,8 +27,8 @@ app.get("/", (req, res) => {
     status: "success",
     timestamp: new Date(),
     url: CONTROL_ROOM_API || "Url not found",
-    dev: process.env.DEV_ALLOWED,
-    prod: process.env.PROD_ALLOWED,
+    dev: process.env.DEV_ALLOWED || "No dev path found",
+    prod: process.env.PROD_ALLOWED || "No prod path found",
   });
 });
 
