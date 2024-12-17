@@ -8,8 +8,14 @@ const app = express();
 // Load the environment variables
 config();
 
+const corOptions = {
+  origin: [process.env.DEV_ALLOWED, process.env.PROD_ALLOWED],
+  methods: ["GET", "POST"],
+  allowedHeaders: "*",
+};
+
 // Middleware
-app.use(cors());
+app.use(cors(corOptions));
 app.use(express.json());
 
 // Environment variables
@@ -21,6 +27,8 @@ app.get("/", (req, res) => {
     status: "success",
     timestamp: new Date(),
     url: CONTROL_ROOM_API || "Url not found",
+    dev: process.env.DEV_ALLOWED,
+    prod: process.env.PROD_ALLOWED,
   });
 });
 
