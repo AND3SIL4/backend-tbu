@@ -8,15 +8,17 @@ const app = express();
 // Load the environment variables
 config();
 
-const corOptions = {
-  origin: [process.env.DEV_ALLOWED, process.env.PROD_ALLOWED],
-  methods: ["GET", "POST"],
+// Set cors options
+const corsOptions = {
+  origin: "https://tbu-project.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: "*",
   preflightContinue: false,
+  optionsSuccessStatus: 204,
 };
 
 // Middleware
-app.use(cors(corOptions));
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Environment variables
@@ -54,6 +56,6 @@ app.use("/api", async (req, res) => {
   }
 });
 
-app.options("*", cors(corOptions));
+app.options("*", cors(corsOptions));
 
 export default app;
