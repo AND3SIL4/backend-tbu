@@ -1,9 +1,12 @@
 import cors from "cors";
 import express from "express";
 import axios from "axios";
+import { config } from "dotenv";
 
 // Start point of the application
 const app = express();
+// Load the environment variables
+config();
 
 // Middleware
 app.use(cors());
@@ -17,13 +20,8 @@ app.get("/", (req, res) => {
     message: "API proxy is running...",
     status: "success",
     timestamp: new Date(),
-    url: CONTROL_ROOM_API,
+    url: CONTROL_ROOM_API || "Url not found",
   });
 });
 
-app.get("/hello", (req, res) => {
-  res.send({
-    message: "Hello world!",
-  });
-});
 export default app;
