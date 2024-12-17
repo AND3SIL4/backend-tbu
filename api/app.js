@@ -10,7 +10,7 @@ config();
 
 // Set cors options
 const corsOptions = {
-  origin: "https://tbu-project.vercel.app",
+  origin: "http://localhost:4000",
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: "*",
   preflightContinue: false,
