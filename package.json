@@ -1,0 +1,23 @@
+{
+  "name": "backend-tbu",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "This project act as a proxy for the frontend consumpition control room api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index.js",
+    "start": "node src/index."
+  },
+  "author": "Andres Silva",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
