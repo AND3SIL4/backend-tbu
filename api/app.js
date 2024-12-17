@@ -20,4 +20,9 @@ app.get("/", (req, res) => {
   });
 });
 
+app.get("/hello-world", (req, res) => {
+  res.send({
+    message: "Hello world!",
+  });
+});
 export default app;
