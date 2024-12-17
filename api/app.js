@@ -10,7 +10,7 @@ config();
 
 // Set cors options
 const corsOptions = {
-  origin: "http://localhost:4000",
+  origin: process.env.HOST_ALLOWED,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: "*",
   preflightContinue: false,
@@ -30,8 +30,7 @@ app.get("/", (req, res) => {
     status: "success",
     timestamp: new Date(),
     url: CONTROL_ROOM_API || "Url not found",
-    dev: process.env.DEV_ALLOWED || "No dev path found",
-    prod: process.env.PROD_ALLOWED || "No prod path found",
+    host_allowed: process.env.HOST_ALLOWED || "Theres is no host allowed found",
   });
 });
 
