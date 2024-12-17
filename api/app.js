@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get("/hello-world", (req, res) => {
+app.get("/hello", (req, res) => {
   res.send({
     message: "Hello world!",
   });
